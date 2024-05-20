@@ -21,7 +21,15 @@ $elementos = $conn->query("SELECT nombre FROM tiempo_maya.pagina WHERE categoria
     <?php include "../blocks/bloquesCss.html" ?>
     <link rel="stylesheet" href="../css/estilo.css?v=<?php echo (rand()); ?>" />
     <link rel="stylesheet" href="../css/paginaModelo.css?v=<?php echo (rand()); ?>" />
-
+    <style>
+    #inicio {
+      width: 100%;
+      height: 100vh;
+      background: url(img/<?php echo $backgroundImage; ?>) top center;
+      background-size: cover;
+      position: relative;
+    }
+  </style>
 
 </head>
 <?php include "../NavBar2.php" ?>
@@ -74,14 +82,40 @@ $elementos = $conn->query("SELECT nombre FROM tiempo_maya.pagina WHERE categoria
 
     ?>
 
+    
 
 
-
-
+ 
     <?php include "../blocks/bloquesJs.html" ?>
+    
+    <script src="../js/background.js"></script>
+    <script>
+    function getBackgroundImage() {
+      const hour = new Date().getHours();
+      let backgroundImage = '';
+      if (hour >= 5 && hour < 7) {
+        backgroundImage = 'img/dinamicos/amanecer.jpeg'; // amanecer
+      } else if (hour >= 7 && hour < 12) {
+        backgroundImage = 'img/dinamicos/mañana.jpeg'; // mañana
+      } else if (hour >= 12 && hour < 14) {
+        backgroundImage = 'img/dinamicos/medio-dia.jpeg'; // medio dio
+      } else if (hour >= 14 && hour < 16) {
+        backgroundImage = 'img/dinamicos/tarde.jpeg'; // Tarde
+      } else if (hour >= 16 && hour < 18) {
+        backgroundImage = 'img/dinamicos/atardecer.jpeg'; // atrdecer
+      } else if (hour >= 18 && hour < 20) {
+        backgroundImage = 'img/dinamicos/anochecer.jpeg'; // anochecer
+      } else if (hour >= 20 && hour <= 24) {
+        backgroundImage = 'img/dinamicos/noche.jpeg'; // noche
+      }else{
+        backgroundImage = 'img/dinamicos/noche.jpeg'; // noche
+      }
+      document.getElementById('inicio').style.backgroundImage = `url(${backgroundImage})`;
 
-
-
+    }
+    getBackgroundImage();
+    setInterval(updateBackgroundImage, 3600000); // 3600000 ms = 1 hora
+  </script>
 
 </body>
 

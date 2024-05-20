@@ -6,8 +6,10 @@ $nahual = $id % 20;
 if ($nahual < 0) {
 	$nahual = 19 + $nahual;
 }
-$Query = $conn->query("SELECT nombre FROM nahual WHERE idweb=".$nahual." ;");
+$Query = $conn->query("SELECT nombre, rutaEscritorio FROM nahual WHERE idweb=".$nahual." ;");
 $row = mysqli_fetch_assoc($Query);
 $query = $row['nombre'];
-return $query;
+$imagen = $row['rutaEscritorio'];
+return ['name' => $query, 'image' => $imagen];
+
 ?>

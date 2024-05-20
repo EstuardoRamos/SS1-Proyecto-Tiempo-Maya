@@ -10,8 +10,12 @@ $fecha_consultar = date("Y-m-d");
 }
 
 $nahual = include 'backend/buscar/conseguir_nahual_nombre.php';
+$nahual_name= $nahual['name'];
 $energia = include 'backend/buscar/conseguir_energia_numero.php';
 $haab = include 'backend/buscar/conseguir_uinal_nombre.php';
+$haab_name = $haab['name'];
+$haab_image = $haab['image'];
+$haab_day = $haab['day'];
 $cuenta_larga = include 'backend/buscar/conseguir_fecha_cuenta_larga.php';
 $cholquij = $nahual." ". strval($energia);
 
@@ -57,11 +61,12 @@ $cholquij = $nahual." ". strval($energia);
                             <tbody>
                                 <tr>
                                     <th scope="row">Calendario Haab</th>
-                                    <td ><?php echo isset($haab) ? $haab : ''; ?></td>
+                                    <td><?php echo isset($haab) ? $haab_name . ' ' . $haab_day : ''; ?></td>
+
                                 </tr>
                                 <tr>
                                     <th scope="row">Calendario Cholquij</th>
-                                    <td><?php echo isset($cholquij) ? $cholquij : ''; ?></td>
+                                    <td><?php echo isset($cholquij) ? $nahual_name : ''; ?></td>
                                 </tr>
                                 <tr>
                                     <th scope="row">Cuenta Larga</th>
@@ -79,6 +84,7 @@ $cholquij = $nahual." ". strval($energia);
 
 
     <?php include "blocks/bloquesJs1.html" ?>
+    <script src="js/background.js"></script>
 
 </body>
 

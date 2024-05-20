@@ -73,10 +73,11 @@ $informacion = $conn->query("SELECT htmlCodigo FROM tiempo_maya.pagina WHERE nom
         </div>
     </section>
 
-
+               
     <?php include "../blocks/bloquesJs.html" ?>
+    
 
-
+    
 
 
 </body>

@@ -14,6 +14,9 @@ $haab = include 'backend/buscar/conseguir_uinal_nombre.php';
 $cuenta_larga = include 'backend/buscar/conseguir_fecha_cuenta_larga.php';
 $cholquij = $nahual." ". strval($energia);
 
+
+    
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +29,7 @@ $cholquij = $nahual." ". strval($energia);
   <link rel="stylesheet" href="css/estiloAdmin.css?v=<?php echo(rand()); ?>" />
 
     <link rel="stylesheet" href="css/index.css?v=<?php echo (rand()); ?>" />
-
+    
 
 </head>
 
@@ -50,5 +53,7 @@ $cholquij = $nahual." ". strval($energia);
   
   <?php include "blocks/bloquesJs1.html" ?>
 
+   <script src="js/background.js"></script><!--  Incluye el archivo JavaScript externo -->
+  
 </body>
 </html>
