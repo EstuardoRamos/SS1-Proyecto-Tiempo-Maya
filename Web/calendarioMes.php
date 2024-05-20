@@ -10,23 +10,36 @@
     <link rel="stylesheet" href="css/calendario.css?v=<?php echo (rand()); ?>" />
     <style>
         .print-button {
-            background-color: #4CAF50; /* Color de fondo verde */
-            border: none; /* Sin borde */
-            color: white; /* Texto en blanco */
-            padding: 15px 32px; /* Relleno del botón */
-            text-align: center; /* Alinear texto al centro */
-            text-decoration: none; /* Sin subrayado */
-            display: inline-block; /* Mostrar en línea */
-            font-size: 16px; /* Tamaño de fuente */
-            margin: 4px 2px; /* Margen */
-            cursor: pointer; /* Cambiar cursor al puntero */
-            border-radius: 12px; /* Bordes redondeados */
-            transition: background-color 0.3s; /* Efecto de transición */
+            background-color: #4CAF50;
+            /* Color de fondo verde */
+            border: none;
+            /* Sin borde */
+            color: white;
+            /* Texto en blanco */
+            padding: 15px 32px;
+            /* Relleno del botón */
+            text-align: center;
+            /* Alinear texto al centro */
+            text-decoration: none;
+            /* Sin subrayado */
+            display: inline-block;
+            /* Mostrar en línea */
+            font-size: 16px;
+            /* Tamaño de fuente */
+            margin: 4px 2px;
+            /* Margen */
+            cursor: pointer;
+            /* Cambiar cursor al puntero */
+            border-radius: 12px;
+            /* Bordes redondeados */
+            transition: background-color 0.3s;
+            /* Efecto de transición */
         }
-        
+
 
         .print-button:hover {
-            background-color: #45a049; /* Color de fondo al pasar el ratón */
+            background-color: #45a049;
+            /* Color de fondo al pasar el ratón */
         }
     </style>
 </head>
@@ -74,7 +87,16 @@
                     echo "<h2>{$meses[intval($month)]} $year</h2>";
                     include "generar_calendario.php";
                     ?>
-                   <button class="print-button" onclick="window.print()">Imprimir / Guardar como PDF</button>
+                    <button class="print-button" onclick="window.print()">Imprimir / Guardar como PDF</button>
+                    <br>
+                    <h2>Generar Calendario Anual</h2>
+                    <form class="calendar-form" action="calendarioAnual.php" method="get" target="_blank">
+                        <div class="form-group">
+                            <label for="year">Año:</label>
+                            <input type="number" id="year" name="year" value="<?php echo date('Y'); ?>" required>
+                        </div>
+                        <button type="submit" class="btn">Generar Calendario</button>
+                    </form>
                 </div>
             </div>
         </section>
