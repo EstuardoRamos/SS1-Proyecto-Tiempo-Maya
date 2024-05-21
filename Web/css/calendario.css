@@ -34,7 +34,7 @@ form {
 .day-header {
     padding: 5px;
     background-color: #fcfefd;
-    color: white;
+    color: rgb(12, 12, 12);
     text-align: center;
     border-radius: 5px;
     font-weight: bold;
@@ -81,4 +81,72 @@ form {
     width: 40px;
     height: 40px;
     border-color: black;
+}
+
+/* Estilos para la impresión */
+@media print {
+    body {
+        background-color: #fff;
+    }
+    .calendar-container {
+        margin-top: 0;
+        box-shadow: none;
+    }
+    button {
+        display: none;
+    }
+}
+
+.mostrar-cal {
+    background-color: #2b2c2b; /* Color de fondo verde */
+    border: none; /* Sin borde */
+    color: white; /* Texto en blanco */
+    padding: 10px 22px; /* Relleno del botón */
+    text-align: center; /* Alinear texto al centro */
+    text-decoration: none; /* Sin subrayado */
+    display: inline-block; /* Mostrar en línea */
+    font-size: 16px; /* Tamaño de fuente */
+    margin: 4px 2px; /* Margen */
+    cursor: pointer; /* Cambiar cursor al puntero */
+    border-radius: 12px; /* Bordes redondeados */
+    transition: background-color 0.3s; /* Efecto de transición */
+}
+
+.form-container {
+    background: #fff;
+    padding: 20px 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+}
+
+.form-container h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.form-container label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+.form-container select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    background: #f9f9f9;
+    transition: background-color 0.3s;
+}
+
+.form-container select:focus {
+    background-color: #e6f7ff;
+    outline: none;
+    border-color: #66b3ff;
 }

@@ -1,23 +1,28 @@
 function getBackgroundImage() {
     const hour = new Date().getHours();
-    if (hour >= 3 && hour < 7) {
+    console.log('hola');
+    console.log(hour);
+    if (hour >= 0 && hour < 3) {
+        return 'img/dinamicos/noche-dia.jpeg'; // noche
+    } else if (hour >= 3 && hour < 7) {
         return 'img/dinamicos/amanecer.jpeg'; // amanecer
     } else if (hour >= 7 && hour < 12) {
         return 'img/dinamicos/mañana.jpeg'; // mañana
-    }else if (hour >= 12 && hour < 14) {
-        return 'img/dinamicos/medio-dia.jpeg'; // medio dio
-    }else if (hour >= 14 && hour < 16) {
-        return 'img/dinamicos/tarde.jpeg'; // Tarde
-    }else if (hour >= 16 && hour < 18) {
-        return 'img/dinamicos/atardecer.jpeg'; // atrdecer
-    }else if (hour >= 18 && hour < 20) {
+    } else if (hour >= 12 && hour < 14) {
+        return 'img/dinamicos/medio-dia.jpeg'; // medio día
+    } else if (hour >= 14 && hour < 16) {
+        return 'img/dinamicos/tarde.jpeg'; // tarde
+    } else if (hour >= 16 && hour < 18) {
+        return 'img/dinamicos/atardecer.jpeg'; // atardecer
+    } else if (hour >= 18 && hour < 20) {
         return 'img/dinamicos/anochecer.jpeg'; // anochecer
-    } else if (hour >= 20 && hour <= 24) {
+    } else if (hour >= 20 && hour < 24) {
         return 'img/dinamicos/noche.jpeg'; // noche
-    }else if (hour >= 0 && hour <= 2){
-        return 'img/dinamicos/noche.jpeg'; // noche 
+    } else {
+        return 'img/dinamicos/noche.jpeg'; // noche para cualquier otro caso
     }
 }
+
 
 function updateBackgroundImage() {
     document.body.style.backgroundImage = `url(${getBackgroundImage()})`;
